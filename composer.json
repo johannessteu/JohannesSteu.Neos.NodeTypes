@@ -1,0 +1,13 @@
+{
+    "name": "johannessteu/neos-nodetypes",
+    "type": "typo3-flow-package",
+    "description": "Neos CMS package that adds some missing NodeTypes",
+    "require": {
+        "typo3/neos": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "JohannesSteu\\Neos\\NodeTypes": "Classes"
+        }
+    }
+}
