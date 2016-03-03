@@ -1,0 +1,84 @@
+$accordeon--has-border: true !default;
+$accordeon--border-color: #b3b3b3 !default;
+$accordeon--margin-bottom: 20px !default;
+
+$accordeon__header--background-color: #dfdfdf !default;
+$accordeon__header--font-color: #000 !default;
+$accordeon__header--background-color-hover: #cfcfcf !default;
+$accordeon__header--font-color-hover: #000 !default;
+$accordeon__header--background-color-active: $accordeon__header--background-color-hover !default;
+$accordeon__header--font-color-active: $accordeon__header--font-color-hover !default;
+$accordeon__header--line-height: 40px !default;
+$accordeon__header--padding-left: 15px !default;
+$accordeon__header--padding-right: 15px !default;
+
+$accordeon__header--after-icon-font-family: 'FontAwesome' !default;
+$accordeon__header--after-icon: "\f078" !default;
+$accordeon__header--after-icon-hover: "\f077" !default;
+$accordeon__header--after-icon-width: 30px !default;
+
+$accordeon__content--padding: 15px !default;
+$accordeon__content--background-color: transparent !default;
+
+
+.accordeon {
+  display: block;
+  margin-bottom: $accordeon--margin-bottom;
+  border: 1px solid $accordeon--border-color;
+
+  &.accordeon--open {
+    > .accordeon__header{
+      background: $accordeon__header--background-color-active;
+      color: $accordeon__header--font-color-active;
+
+      &:after{
+        content: $accordeon__header--after-icon-hover;
+      }
+    }
+
+    > .accordeon__content {
+      padding: $accordeon__content--padding;
+    }
+  }
+
+  .accordeon__title {
+    text-decoration: none;
+  }
+
+  .accordeon__header {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    background: $accordeon__header--background-color;
+    color: $accordeon__header--font-color;
+    padding-left: $accordeon__header--padding-left;
+    padding-right: $accordeon__header--padding-right;
+    line-height: $accordeon__header--line-height;
+
+    &:hover {
+      background: $accordeon__header--background-color-hover;
+      color: $accordeon__header--font-color-hover;
+      text-decoration: none;
+    }
+
+    &:after{
+      font-family: $accordeon__header--after-icon-font-family;
+      position: absolute;
+      display: block;
+      width: $accordeon__header--after-icon-width;
+      line-height: $accordeon__header--line-height;
+      text-align: center;
+      top:0;
+      right: 5px;
+      bottom:0;
+      content: $accordeon__header--after-icon;
+    }
+  }
+
+  .accordeon__content {
+    display: block;
+    background: $accordeon__content--background-color;
+    overflow: hidden;
+    max-height: 0;
+  }
+}

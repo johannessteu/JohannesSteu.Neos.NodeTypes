@@ -1,1 +1,34 @@
 include: NodeTypes/*
+
+prototype(TYPO3.Neos:Page) {
+    head.stylesheets.allNodeTypes = TYPO3.TypoScript:Tag {
+        tagName = 'link'
+
+        attributes {
+            rel = 'stylesheet'
+            href = TYPO3.TypoScript:ResourceUri {
+                path = 'resource://JohannesSteu.Neos.NodeTypes/Public/Styles/all.min.css'
+            }
+        }
+
+        @position = 'end'
+
+        # Only render if ...
+        @if.allCssIsIncluded = ${Configuration.setting('JohannesSteu.Neos.NodeTypes.All.loadCSS')}
+    }
+
+    body.javascripts.allNodeTypes = TYPO3.TypoScript:Tag {
+        tagName = 'script'
+
+        attributes {
+            src = TYPO3.TypoScript:ResourceUri {
+                path = 'resource://JohannesSteu.Neos.NodeTypes/Public/Scripts/All.min.js'
+            }
+        }
+
+        @position = "end"
+
+        # Only render if ...
+        @if.allJsIsIncluded = ${Configuration.setting('JohannesSteu.Neos.NodeTypes.All.loadJS')}
+    }
+}

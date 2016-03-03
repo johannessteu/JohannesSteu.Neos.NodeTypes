@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="" product-name="JohannesSteu.Neos.News" source-language="en" datatype="plaintext" target-language="de">
+    <body>
+      <trans-unit id="ui.label" xml:space="preserve">
+        <source>Accordeon</source>
+        <target>Accordeon</target>
+      </trans-unit>
+      <trans-unit id="groups.accordeon" xml:space="preserve">
+        <source>Accordeon Settings</source>
+        <target>Accordeon Settings</target>
+      </trans-unit>
+      <trans-unit id="properties.initialState" xml:space="preserve">
+        <source>Inital state</source>
+        <target>Initial state</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

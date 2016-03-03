@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="" product-name="JohannesSteu.Neos.News" source-language="en" datatype="plaintext" target-language="de">
+    <body>
+      <trans-unit id="ui.label" xml:space="preserve">
+        <source>Accordeon</source>
+        <target xml:lang="de">Akkordeon</target>
+      </trans-unit>
+      <trans-unit id="groups.accordeon" xml:space="preserve">
+        <source>Accordeon Settings</source>
+        <target xml:lang="de">Akkordeon-Einstellungen</target>
+      </trans-unit>
+      <trans-unit id="properties.initialState" xml:space="preserve">
+        <source>Initialer Status</source>
+        <target xml:lang="de">Initialer Status</target>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

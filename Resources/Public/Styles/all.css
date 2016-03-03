@@ -1,0 +1,42 @@
+@charset "UTF-8";
+.accordeon {
+  display: block;
+  margin-bottom: 20px;
+  border: 1px solid #b3b3b3; }
+  .accordeon.accordeon--open > .accordeon__header {
+    background: #333333;
+    color: #fff; }
+    .accordeon.accordeon--open > .accordeon__header:after {
+      content: ""; }
+  .accordeon.accordeon--open > .accordeon__content {
+    padding: 15px; }
+  .accordeon .accordeon__header {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    background: #dfdfdf;
+    color: #000;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 40px;
+    text-decoration: none; }
+    .accordeon .accordeon__header:hover {
+      background: #cfcfcf;
+      color: #000;
+      text-decoration: none; }
+    .accordeon .accordeon__header:after {
+      font-family: "FontAwesome";
+      position: absolute;
+      display: block;
+      width: 30px;
+      line-height: 40px;
+      text-align: center;
+      top: 0;
+      right: 5px;
+      bottom: 0;
+      content: ""; }
+  .accordeon .accordeon__content {
+    display: block;
+    background: transparent;
+    overflow: hidden;
+    max-height: 0; }

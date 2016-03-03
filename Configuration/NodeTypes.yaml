@@ -1,0 +1,39 @@
+'JohannesSteu.Neos.NodeTypes:Accordeon':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'i18n'
+    inlineEditable: TRUE
+    icon: 'icon-chevron-down'
+    inspector:
+      groups:
+        accordeon:
+          label: 'i18n'
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    initialState:
+      type: string
+      defaultValue: 'closed'
+      ui:
+        label: 'i18n'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'accordeon'
+          editor: 'Content/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'closed':
+                label: 'Closed'
+              'opened':
+                label: 'Opened'
+    title:
+      type: string
+      defaultValue: 'Titel'
+      ui:
+        label: 'i18n'
+        inlineEditable: TRUE
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'accordeon'
