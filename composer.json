@@ -1,7 +1,8 @@
 {
     "name": "johannessteu/neos-nodetypes",
     "type": "typo3-flow-package",
-    "description": "Neos CMS package that adds some missing NodeTypes",
+    "description": "Neos CMS package that adds some missing NodeTypes for a daily usage like accordeon, teaser and slider",
+    "license": "GPL-3.0+",
     "require": {
         "typo3/neos": "*"
     },
@@ -9,5 +10,8 @@
         "psr-0": {
             "JohannesSteu\\Neos\\NodeTypes": "Classes"
         }
+    },
+    "extra": {
+        "marketplace-account": "hello@johannessteu.de"
     }
 }
