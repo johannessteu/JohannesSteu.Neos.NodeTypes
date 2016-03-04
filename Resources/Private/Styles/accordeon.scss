@@ -36,9 +36,6 @@ $accordeon__content--background-color: transparent !default;
       }
     }
 
-    > .accordeon__content {
-      padding: $accordeon__content--padding;
-    }
   }
 
   .accordeon__title {
@@ -80,5 +77,10 @@ $accordeon__content--background-color: transparent !default;
     background: $accordeon__content--background-color;
     overflow: hidden;
     max-height: 0;
+
+    > .accordeon__content-collection {
+      padding: $accordeon__content--padding;
+    }
+
   }
 }

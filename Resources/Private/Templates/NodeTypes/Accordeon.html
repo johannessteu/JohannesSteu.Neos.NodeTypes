@@ -5,5 +5,7 @@
         <a class="{classname}__title">{title}</a>
     </div>
 
-    {content -> f:format.raw()}
+    <div data-content class="{classname}__content">
+        {content -> f:format.raw()}
+    </div>
 </div>

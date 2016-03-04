@@ -4,12 +4,12 @@
   margin-bottom: 20px;
   border: 1px solid #b3b3b3; }
   .accordeon.accordeon--open > .accordeon__header {
-    background: #333333;
-    color: #fff; }
+    background: #cfcfcf;
+    color: #000; }
     .accordeon.accordeon--open > .accordeon__header:after {
       content: ""; }
-  .accordeon.accordeon--open > .accordeon__content {
-    padding: 15px; }
+  .accordeon .accordeon__title {
+    text-decoration: none; }
   .accordeon .accordeon__header {
     box-sizing: border-box;
     position: relative;
@@ -18,8 +18,7 @@
     color: #000;
     padding-left: 15px;
     padding-right: 15px;
-    line-height: 40px;
-    text-decoration: none; }
+    line-height: 40px; }
     .accordeon .accordeon__header:hover {
       background: #cfcfcf;
       color: #000;
@@ -40,3 +39,5 @@
     background: transparent;
     overflow: hidden;
     max-height: 0; }
+    .accordeon .accordeon__content > .accordeon__content-collection {
+      padding: 15px; }

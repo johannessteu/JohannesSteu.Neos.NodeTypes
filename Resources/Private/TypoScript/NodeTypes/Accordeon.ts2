@@ -8,8 +8,7 @@ prototype(JohannesSteu.Neos.NodeTypes:Accordeon) < prototype(TYPO3.Neos:Content)
     attributes.data-accordeon = ""
 
     content = TYPO3.Neos:ContentCollection {
-        attributes.class = ${classname + "__content"}
-        attributes.data-content = ""
+        attributes.class = ${classname + "__content-collection"}
         nodePath = ${q(node).children('content').property('_path')}
         collection = ${q(node).children('content').children()}
     }
