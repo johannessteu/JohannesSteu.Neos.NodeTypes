@@ -22,7 +22,8 @@
     .accordeon .accordeon__header:hover {
       background: #cfcfcf;
       color: #000;
-      text-decoration: none; }
+      text-decoration: none;
+      cursor: pointer; }
     .accordeon .accordeon__header:after {
       font-family: "FontAwesome";
       position: absolute;
