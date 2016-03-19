@@ -4,7 +4,12 @@
     "description": "Neos CMS package that adds some missing NodeTypes for a daily usage like accordeon, teaser and slider",
     "license": "GPL-3.0+",
     "require": {
-        "typo3/neos": "*"
+        "typo3/neos": "*",
+        "typo3/neos-nodetypes": "*"
+    },
+    "suggest": {
+        "johannessteu/bootstrap-gridsystem": "For a versatile grid system",
+        "johannessteu/neos-flexboxgrid": "For a flexbox based grid system"
     },
     "autoload": {
         "psr-0": {

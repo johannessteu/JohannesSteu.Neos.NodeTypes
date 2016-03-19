@@ -1,0 +1,63 @@
+prototype(JohannesSteu.Neos.NodeTypes:SlickSlider) < prototype(TYPO3.Neos:Content) {
+    templatePath = 'resource://JohannesSteu.Neos.NodeTypes/Private/Templates/NodeTypes/Slider.html'
+    sectionName = 'slider'
+
+    @context.classname = 'slideshow'
+    attributes.class = ${classname}
+
+    slides = ${q(node).children('slides').children('[instanceof JohannesSteu.Neos.NodeTypes:SlickSlide]').get()}
+    slideRenderer = JohannesSteu.Neos.NodeTypes:SlickSlide
+}
+
+prototype(JohannesSteu.Neos.NodeTypes:SlickSlide) < prototype(TYPO3.Neos:Content) {
+    templatePath = 'resource://JohannesSteu.Neos.NodeTypes/Private/Templates/NodeTypes/Slider.html'
+    sectionName = 'item'
+    @context.classname = 'slideshow'
+
+    classname = ${classname}
+    attributes.class = ${classname + "__slide"}
+    attributes.class.@process.nodeType >
+
+    content = TYPO3.Neos:ContentCollection {
+        nodePath = ${q(node).children('content').property('_path')}
+        collection = ${q(node).children('content').children()}
+    }
+}
+
+
+prototype(TYPO3.Neos:Page) {
+    head.stylesheets.slideshow = TYPO3.TypoScript:Tag {
+        tagName = 'link'
+
+        attributes {
+            rel = 'stylesheet'
+            href = TYPO3.TypoScript:ResourceUri {
+                path = 'resource://JohannesSteu.Neos.NodeTypes/Public/Styles/slideshow.min.css'
+            }
+        }
+
+        @position = 'end'
+
+        # Only render if ...
+        @if.slideshowIsPresent = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]').find('[instanceof JohannesSteu.Neos.NodeTypes:SlickSlider]').count() > 0}
+        @if.cssShouldBeIncluded = ${Configuration.setting('JohannesSteu.Neos.NodeTypes.Slideshow.loadCSS')}
+        @if.allCssIsNotIncluded = ${!Configuration.setting('JohannesSteu.Neos.NodeTypes.All.loadCSS')}
+    }
+
+    body.javascripts.slideshow = TYPO3.TypoScript:Tag {
+        tagName = 'script'
+
+        attributes {
+            src = TYPO3.TypoScript:ResourceUri {
+                path = 'resource://JohannesSteu.Neos.NodeTypes/Public/Scripts/SlickSlider.min.js'
+            }
+        }
+
+        @position = "end"
+
+        # Only render if ...
+        @if.accordeonIsPresent = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]').find('[instanceof JohannesSteu.Neos.NodeTypes:Accordeon]').count() > 0}
+        @if.jsShouldBeIncluded = ${Configuration.setting('JohannesSteu.Neos.NodeTypes.Slideshow.loadJS')}
+        @if.allJsIsNotIncluded = ${!Configuration.setting('JohannesSteu.Neos.NodeTypes.All.loadJS')}
+    }
+}

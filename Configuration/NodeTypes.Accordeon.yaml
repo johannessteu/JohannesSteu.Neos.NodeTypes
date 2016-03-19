@@ -1,6 +1,7 @@
+
 'JohannesSteu.Neos.NodeTypes:Accordeon':
   superTypes:
-    - 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': TRUE
   ui:
     label: 'i18n'
     inlineEditable: TRUE

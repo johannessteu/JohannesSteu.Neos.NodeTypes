@@ -1,0 +1,55 @@
+'TYPO3.Neos:ContentCollection':
+  constraints:
+    nodeTypes:
+      'JohannesSteu.Neos.NodeTypes:SlickSlide': FALSE
+
+'JohannesSteu.Neos.NodeTypes:SlickSliderMixin':
+  abstract: TRUE
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  ui:
+    inspector:
+      tabs:
+        slick:
+          label: 'Slick Slider'
+          icon: 'icon-picture'
+      groups:
+        slicksettings:
+          tab: 'slick'
+          label: 'Slider Settings'
+
+'JohannesSteu.Neos.NodeTypes:SlickSlider':
+  superTypes:
+    'JohannesSteu.Neos.NodeTypes:SlickSliderMixin': TRUE
+  childNodes:
+    slides:
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'JohannesSteu.Neos.NodeTypes:SlickSlide': TRUE
+  ui:
+    label: 'i18n'
+    inlineEditable: TRUE
+    icon: 'icon-picture'
+
+'JohannesSteu.Neos.NodeTypes:SlickSlide':
+  superTypes:
+    'JohannesSteu.Neos.NodeTypes:SlickSliderMixin': TRUE
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          'JohannesSteu.Neos.NodeTypes:SlickSlider': FALSE
+          'JohannesSteu.Neos.NodeTypes:SlickSlide': FALSE
+  ui:
+    label: 'i18n'
+  properties:
+    image:
+      type: TYPO3\Media\Domain\Model\ImageInterface
+      ui:
+        label: 'i18n'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'slicksettings'

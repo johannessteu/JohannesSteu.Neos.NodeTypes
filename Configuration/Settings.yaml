@@ -19,5 +19,8 @@ JohannesSteu:
       # if the above All.loadCSS // All.LoadJS are set to false the CSS / JS for a specific element will only
       # be loaded if there is an element of that NodeType on the current page
       Accordeon:
-        loadCSS: TRUE
-        loadJS: TRUE
+        loadCSS: FALSE
+        loadJS: FALSE
+      Slideshow:
+        loadCSS: FALSE
+        loadJS: FALSE

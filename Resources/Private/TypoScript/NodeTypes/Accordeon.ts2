@@ -42,7 +42,7 @@ prototype(TYPO3.Neos:Page) {
             }
         }
 
-        @position = "end"
+        @position = 'end'
 
         # Only render if ...
         @if.accordeonIsPresent = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]').find('[instanceof JohannesSteu.Neos.NodeTypes:Accordeon]').count() > 0}

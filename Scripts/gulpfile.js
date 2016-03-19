@@ -23,9 +23,16 @@ gulp.task('sass', function (cb) {
         .pipe(gulp.dest(destPath));
 });
 
+gulp.task('copy-files', function () {
+    return gulp.src(packagePath + 'Scripts/node_modules/slick-carousel/slick/slick.min.js')
+        .pipe(gulp.dest(packagePath + 'Resources/Public/Scripts'))
+        .pipe(print());
+});
+
 gulp.task('minify-css', function () {
     return gulp.src([
             destPath + '/accordeon.css',
+            destPath + '/slideshow.css',
             destPath + '/all.css',
         ])
         .pipe(autoprefixer())
@@ -34,9 +41,19 @@ gulp.task('minify-css', function () {
         .pipe(gulp.dest(destPath));
 });
 
+gulp.task('concatslideshowjs', function () {
+    return gulp.src([
+            packagePath + 'Resources/Public/Scripts/slick.min.js',
+            packagePath + 'Resources/Private/Scripts/Slideshow.js'
+        ])
+        .pipe(concat('SlickSlider.js'))
+        .pipe(gulp.dest(packagePath + "Resources/Private/Scripts/"));
+});
+
 gulp.task('concatjs', function () {
     return gulp.src([
-            packagePath + 'Resources/Private/Scripts/Accordeon.js'
+            packagePath + 'Resources/Private/Scripts/Accordeon.js',
+            packagePath + 'Resources/Private/Scripts/SlickSlider.js'
         ])
         .pipe(concat('All.js'))
         .pipe(gulp.dest(packagePath + "Resources/Private/Scripts/"));
@@ -54,7 +71,7 @@ gulp.task('compile-css', function () {
     runSequence('sass', 'minify-css');
 });
 gulp.task('compile-js', function () {
-    runSequence('concatjs', 'uglifyjs')
+    runSequence('copy-files', 'concatslideshowjs', 'concatjs', 'uglifyjs')
 });
 
 gulp.task('compile', ['compile-css', 'compile-js']);
