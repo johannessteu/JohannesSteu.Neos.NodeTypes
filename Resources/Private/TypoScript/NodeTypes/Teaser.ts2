@@ -1,0 +1,11 @@
+prototype(JohannesSteu.Neos.NodeTypes:Teaser) < prototype(TYPO3.Neos:Content) {
+    @context.classname = 'teaser'
+    classname = ${classname}
+
+    attributes.class = ${classname}
+    attributes.class.@process.nodeType >
+
+    link.@process.convertUris = TYPO3.Neos:ConvertUris {
+        forceConversion = true
+    }
+}

@@ -24,7 +24,6 @@ prototype(JohannesSteu.Neos.NodeTypes:SlickSlide) < prototype(TYPO3.Neos:Content
     }
 }
 
-
 prototype(TYPO3.Neos:Page) {
     head.stylesheets.slideshow = TYPO3.TypoScript:Tag {
         tagName = 'link'

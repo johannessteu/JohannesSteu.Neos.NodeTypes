@@ -6,6 +6,7 @@ prototype(JohannesSteu.Neos.NodeTypes:Accordeon) < prototype(TYPO3.Neos:Content)
     attributes.class = ${classname}
     attributes.class.@process.addInitialState = ${q(node).property('initialState') == 'opened' ? value + " " + classname + "--open" : value}
     attributes.data-accordeon = ""
+    attributes.class.@process.nodeType >
 
     content = TYPO3.Neos:ContentCollection {
         attributes.class = ${classname + "__content-collection"}
