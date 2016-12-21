@@ -1,14 +1,14 @@
-'TYPO3.Neos.NodeTypes:Page':
+'Neos.NodeTypes:Page':
   abstract: TRUE
 
-'TYPO3.Neos.NodeTypes:TwoColumn':
+'Neos.NodeTypes:TwoColumn':
   abstract: TRUE
 
-'TYPO3.Neos.NodeTypes:ThreeColumn':
+'Neos.NodeTypes:ThreeColumn':
   abstract: TRUE
 
-'TYPO3.Neos.NodeTypes:FourColumn':
+'Neos.NodeTypes:FourColumn':
   abstract: TRUE
 
-'TYPO3.Neos.NodeTypes:Form':
+'Neos.NodeTypes:Form':
   abstract: TRUE

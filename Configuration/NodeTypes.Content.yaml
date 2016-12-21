@@ -1,10 +1,10 @@
 
 'JohannesSteu.Neos.NodeTypes:Teaser':
   superTypes:
-    'TYPO3.Neos.NodeTypes:Headline': TRUE
-    'TYPO3.Neos.NodeTypes:TextWithImage': TRUE
-    'TYPO3.Neos.NodeTypes:ImageAlignmentMixin': FALSE
-    'TYPO3.Neos.NodeTypes:ImageCaptionMixin': FALSE
+    'Neos.NodeTypes:Headline': TRUE
+    'Neos.NodeTypes:TextWithImage': TRUE
+    'Neos.NodeTypes:ImageAlignmentMixin': FALSE
+    'Neos.NodeTypes:ImageCaptionMixin': FALSE
   ui:
     label: 'i18n'
     inlineEditable: TRUE
