@@ -25,12 +25,12 @@ prototype(JohannesSteu.Neos.NodeTypes:SlickSlide) < prototype(TYPO3.Neos:Content
 }
 
 prototype(TYPO3.Neos:Page) {
-    head.stylesheets.slideshow = TYPO3.TypoScript:Tag {
+    head.stylesheets.slideshow = Neos.Fusion:Tag {
         tagName = 'link'
 
         attributes {
             rel = 'stylesheet'
-            href = TYPO3.TypoScript:ResourceUri {
+            href = Neos.Fusion:ResourceUri {
                 path = 'resource://JohannesSteu.Neos.NodeTypes/Public/Styles/slideshow.min.css'
             }
         }
@@ -43,11 +43,11 @@ prototype(TYPO3.Neos:Page) {
         @if.allCssIsNotIncluded = ${!Configuration.setting('JohannesSteu.Neos.NodeTypes.All.loadCSS')}
     }
 
-    body.javascripts.slideshow = TYPO3.TypoScript:Tag {
+    body.javascripts.slideshow = Neos.Fusion:Tag {
         tagName = 'script'
 
         attributes {
-            src = TYPO3.TypoScript:ResourceUri {
+            src = Neos.Fusion:ResourceUri {
                 path = 'resource://JohannesSteu.Neos.NodeTypes/Public/Scripts/SlickSlider.min.js'
             }
         }

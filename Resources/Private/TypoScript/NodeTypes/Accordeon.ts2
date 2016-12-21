@@ -16,12 +16,12 @@ prototype(JohannesSteu.Neos.NodeTypes:Accordeon) < prototype(TYPO3.Neos:Content)
 }
 
 prototype(TYPO3.Neos:Page) {
-    head.stylesheets.accordeon = TYPO3.TypoScript:Tag {
+    head.stylesheets.accordeon = Neos.Fusion:Tag {
         tagName = 'link'
 
         attributes {
             rel = 'stylesheet'
-            href = TYPO3.TypoScript:ResourceUri {
+            href = Neos.Fusion:ResourceUri {
                 path = 'resource://JohannesSteu.Neos.NodeTypes/Public/Styles/accordeon.min.css'
             }
         }
@@ -34,11 +34,11 @@ prototype(TYPO3.Neos:Page) {
         @if.allCssIsNotIncluded = ${!Configuration.setting('JohannesSteu.Neos.NodeTypes.All.loadCSS')}
     }
 
-    body.javascripts.accordeon = TYPO3.TypoScript:Tag {
+    body.javascripts.accordeon = Neos.Fusion:Tag {
         tagName = 'script'
 
         attributes {
-            src = TYPO3.TypoScript:ResourceUri {
+            src = Neos.Fusion:ResourceUri {
                 path = 'resource://JohannesSteu.Neos.NodeTypes/Public/Scripts/Accordeon.min.js'
             }
         }

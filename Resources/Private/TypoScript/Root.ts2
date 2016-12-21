@@ -1,12 +1,12 @@
 include: NodeTypes/*
 
 prototype(TYPO3.Neos:Page) {
-    head.stylesheets.allNodeTypes = TYPO3.TypoScript:Tag {
+    head.stylesheets.allNodeTypes = Neos.Fusion:Tag {
         tagName = 'link'
 
         attributes {
             rel = 'stylesheet'
-            href = TYPO3.TypoScript:ResourceUri {
+            href = Neos.Fusion:ResourceUri {
                 path = 'resource://JohannesSteu.Neos.NodeTypes/Public/Styles/all.min.css'
             }
         }
@@ -17,11 +17,11 @@ prototype(TYPO3.Neos:Page) {
         @if.allCssIsIncluded = ${Configuration.setting('JohannesSteu.Neos.NodeTypes.All.loadCSS')}
     }
 
-    body.javascripts.allNodeTypes = TYPO3.TypoScript:Tag {
+    body.javascripts.allNodeTypes = Neos.Fusion:Tag {
         tagName = 'script'
 
         attributes {
-            src = TYPO3.TypoScript:ResourceUri {
+            src = Neos.Fusion:ResourceUri {
                 path = 'resource://JohannesSteu.Neos.NodeTypes/Public/Scripts/All.min.js'
             }
         }
