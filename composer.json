@@ -1,19 +1,19 @@
 {
     "name": "johannessteu/neos-nodetypes",
-    "type": "typo3-flow-package",
+    "type": "neos-package",
     "description": "Neos CMS package that adds some missing NodeTypes for a daily usage like accordeon, teaser and slider",
     "license": "GPL-3.0+",
     "require": {
-        "typo3/neos": "*",
-        "typo3/neos-nodetypes": "*"
+        "neos/neos": "*",
+        "neos/nodetypes": "*"
     },
     "suggest": {
         "johannessteu/bootstrap-gridsystem": "For a versatile grid system",
         "johannessteu/neos-flexboxgrid": "For a flexbox based grid system"
     },
     "autoload": {
-        "psr-0": {
-            "JohannesSteu\\Neos\\NodeTypes": "Classes"
+        "psr-4": {
+            "JohannesSteu\\Neos\\NodeTypes\\": "Classes"
         }
     },
     "extra": {
