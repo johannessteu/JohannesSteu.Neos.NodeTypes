@@ -1,7 +1,7 @@
 
 'JohannesSteu.Neos.NodeTypes:Accordeon':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'Neos.Neos:Content': TRUE
   ui:
     label: 'i18n'
     inlineEditable: TRUE
@@ -12,7 +12,7 @@
           label: 'i18n'
   childNodes:
     content:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   properties:
     initialState:
       type: string

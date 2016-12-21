@@ -1,4 +1,4 @@
-'TYPO3.Neos:ContentCollection':
+'Neos.Neos:ContentCollection':
   constraints:
     nodeTypes:
       'JohannesSteu.Neos.NodeTypes:SlickSlide': FALSE
@@ -6,7 +6,7 @@
 'JohannesSteu.Neos.NodeTypes:SlickSliderMixin':
   abstract: TRUE
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'Neos.Neos:Content': TRUE
   ui:
     inspector:
       tabs:
@@ -23,7 +23,7 @@
     'JohannesSteu.Neos.NodeTypes:SlickSliderMixin': TRUE
   childNodes:
     slides:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
       constraints:
         nodeTypes:
           '*': FALSE
@@ -38,7 +38,7 @@
     'JohannesSteu.Neos.NodeTypes:SlickSliderMixin': TRUE
   childNodes:
     content:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
       constraints:
         nodeTypes:
           'JohannesSteu.Neos.NodeTypes:SlickSlider': FALSE
