@@ -1,6 +1,6 @@
 include: NodeTypes/*
 
-prototype(TYPO3.Neos:Page) {
+prototype(Neos.Neos:Page) {
     head.stylesheets.allNodeTypes = Neos.Fusion:Tag {
         tagName = 'link'
 

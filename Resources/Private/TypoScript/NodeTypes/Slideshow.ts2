@@ -1,4 +1,4 @@
-prototype(JohannesSteu.Neos.NodeTypes:SlickSlider) < prototype(TYPO3.Neos:Content) {
+prototype(JohannesSteu.Neos.NodeTypes:SlickSlider) < prototype(Neos.Neos:Content) {
     templatePath = 'resource://JohannesSteu.Neos.NodeTypes/Private/Templates/NodeTypes/Slider.html'
     sectionName = 'slider'
 
@@ -9,7 +9,7 @@ prototype(JohannesSteu.Neos.NodeTypes:SlickSlider) < prototype(TYPO3.Neos:Conten
     slideRenderer = JohannesSteu.Neos.NodeTypes:SlickSlide
 }
 
-prototype(JohannesSteu.Neos.NodeTypes:SlickSlide) < prototype(TYPO3.Neos:Content) {
+prototype(JohannesSteu.Neos.NodeTypes:SlickSlide) < prototype(Neos.Neos:Content) {
     templatePath = 'resource://JohannesSteu.Neos.NodeTypes/Private/Templates/NodeTypes/Slider.html'
     sectionName = 'item'
     @context.classname = 'slideshow'
@@ -18,13 +18,13 @@ prototype(JohannesSteu.Neos.NodeTypes:SlickSlide) < prototype(TYPO3.Neos:Content
     attributes.class = ${classname + "__slide"}
     attributes.class.@process.nodeType >
 
-    content = TYPO3.Neos:ContentCollection {
+    content = Neos.Neos:ContentCollection {
         nodePath = ${q(node).children('content').property('_path')}
         collection = ${q(node).children('content').children()}
     }
 }
 
-prototype(TYPO3.Neos:Page) {
+prototype(Neos.Neos:Page) {
     head.stylesheets.slideshow = Neos.Fusion:Tag {
         tagName = 'link'
 
@@ -38,7 +38,7 @@ prototype(TYPO3.Neos:Page) {
         @position = 'end'
 
         # Only render if ...
-        @if.slideshowIsPresent = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]').find('[instanceof JohannesSteu.Neos.NodeTypes:SlickSlider]').count() > 0}
+        @if.slideshowIsPresent = ${q(node).children('[instanceof Neos.Neos:ContentCollection]').find('[instanceof JohannesSteu.Neos.NodeTypes:SlickSlider]').count() > 0}
         @if.cssShouldBeIncluded = ${Configuration.setting('JohannesSteu.Neos.NodeTypes.Slideshow.loadCSS')}
         @if.allCssIsNotIncluded = ${!Configuration.setting('JohannesSteu.Neos.NodeTypes.All.loadCSS')}
     }
@@ -55,7 +55,7 @@ prototype(TYPO3.Neos:Page) {
         @position = "end"
 
         # Only render if ...
-        @if.accordeonIsPresent = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]').find('[instanceof JohannesSteu.Neos.NodeTypes:Accordeon]').count() > 0}
+        @if.accordeonIsPresent = ${q(node).children('[instanceof Neos.Neos:ContentCollection]').find('[instanceof JohannesSteu.Neos.NodeTypes:Accordeon]').count() > 0}
         @if.jsShouldBeIncluded = ${Configuration.setting('JohannesSteu.Neos.NodeTypes.Slideshow.loadJS')}
         @if.allJsIsNotIncluded = ${!Configuration.setting('JohannesSteu.Neos.NodeTypes.All.loadJS')}
     }
