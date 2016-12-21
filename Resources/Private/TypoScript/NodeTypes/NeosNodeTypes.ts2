@@ -1,9 +1,9 @@
-prototype(TYPO3.Neos.NodeTypes:Text) {
+prototype(Neos.NodeTypes:Text) {
     templatePath = "resource://JohannesSteu.Neos.NodeTypes/Private/Templates/NodeTypes/Text.html"
     class = "jst-text"
 }
 
-prototype(TYPO3.Neos.NodeTypes:Headline) {
+prototype(Neos.NodeTypes:Headline) {
     templatePath = "resource://JohannesSteu.Neos.NodeTypes/Private/Templates/NodeTypes/Headline.html"
     class = "jst-headline"
 }
