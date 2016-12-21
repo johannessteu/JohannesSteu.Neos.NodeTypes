@@ -13,11 +13,11 @@ JohannesSteu:
         loadJS: false
 Neos:
   Neos:
-    typoScript:
-      autoInclude:
-        JohannesSteu.Neos.NodeTypes: true
     userInterface:
       translation:
         autoInclude:
           JohannesSteu.Neos.NodeTypes:
             - 'NodeTypes/*'
+    fusion:
+      autoInclude:
+        JohannesSteu.Neos.NodeTypes: true
