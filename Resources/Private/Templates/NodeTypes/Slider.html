@@ -1,10 +1,11 @@
 {namespace neos=Neos\Neos\ViewHelpers}
-{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+{namespace fusion=Neos\Fusion\ViewHelpers}
 
 <f:section name="slider">
     <div {attributes -> f:format.raw()}>
         <f:for each="{slides}" as="slide">
-            <ts:render path="slideRenderer" context="{node: slide}" />
+            <fusion:render path="slideRenderer" context="{node: slide}" />
         </f:for>
     </div>
 </f:section>
@@ -14,11 +15,11 @@
         <f:if condition="{image}">
             <div class="{classname}__image">
                 <picture>
-                    <source srcset="{typo3.media:uri.image(image: '{image}', maximumWidth: 500)}" media="(max-width: 500px)">
-                    <source srcset="{typo3.media:uri.image(image: '{image}', maximumWidth: 800)}" media="(max-width: 500px) AND (min-resolution: 192dpi)">
-                    <source srcset="{typo3.media:uri.image(image: '{image}', maximumWidth: 800)}" media="(min-width: 501px) AND (max-width: 768px)">
-                    <source srcset="{typo3.media:uri.image(image: '{image}', maximumWidth: 1200)}" media="(min-width: 768px)">
-                    <img alt="{headline}" src="{typo3.media:uri.image(image: '{image}', maximumWidth: 1200)}">
+                    <source srcset="{media:uri.image(image: image, maximumWidth: 500)}" media="(max-width: 500px)">
+                    <source srcset="{media:uri.image(image: image, maximumWidth: 800)}" media="(max-width: 500px) AND (min-resolution: 192dpi)">
+                    <source srcset="{media:uri.image(image: image, maximumWidth: 800)}" media="(min-width: 501px) AND (max-width: 768px)">
+                    <source srcset="{media:uri.image(image: image, maximumWidth: 1200)}" media="(min-width: 768px)">
+                    <img alt="{headline}" src="{media:uri.image(image: image, maximumWidth: 1200)}">
                 </picture>
             </div>
         </f:if>
